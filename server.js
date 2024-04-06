@@ -7,10 +7,14 @@ import categoryRoutes from './routes/categoryroutes.js';
 import productRoutes from './routes/productroutes.js';
 import cors from 'cors';
 import path from 'path';
-
+import { fileURLToPath } from 'url';
 
 //configure env
 dotenv.config();
+
+//esmodule fix
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 //database config
 connectDB();
